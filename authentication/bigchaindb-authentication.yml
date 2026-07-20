@@ -1,0 +1,22 @@
+generated: '2026-07-18'
+method: searched
+source: >-
+  BigchainDB Server HTTP API reference and transaction-model documentation.
+  Derived-then-confirmed: the OpenAPI transcription declares no HTTP
+  securitySchemes because the BigchainDB HTTP API has no transport-layer auth by
+  default — authorization is enforced cryptographically at the payload level.
+docs: https://docs.bigchaindb.com/projects/server/en/latest/http-client-server-api.html
+summary:
+  types: [none, payload-signature]
+  api_key_in: []
+  oauth2_flows: []
+model:
+  transport_auth: none-by-default
+  payload_auth: crypto-conditions (Ed25519 signatures)
+  notes: >-
+    The core BigchainDB HTTP API accepts unauthenticated reads and writes; a write
+    is only valid if the transaction is correctly signed with the owners' Ed25519
+    keys via crypto-conditions, and outputs can only be spent by fulfilling their
+    conditions. Hosted networks may add app_id / app_key headers at the gateway
+    (deployment-specific), but that is not part of the core API contract.
+schemes: []
