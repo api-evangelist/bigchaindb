@@ -1,0 +1,53 @@
+generated: '2026-07-18'
+method: derived
+source: >-
+  Derived from the BigchainDB Server HTTP API reference and transcribed into
+  openapi/bigchaindb-http-openapi.yml, plus the BigchainDB transaction/data-model
+  documentation. Captures the cross-cutting request/response semantics of the
+  BigchainDB HTTP API.
+docs: https://docs.bigchaindb.com/projects/server/en/latest/http-client-server-api.html
+authentication:
+  style: none-by-default
+  notes: >-
+    The BigchainDB HTTP API has no transport-layer authentication by default;
+    integrity and authorization are enforced cryptographically at the payload
+    level — every transaction is signed with Ed25519 crypto-conditions and
+    addressed by a content hash. Hosted networks (e.g. the IPDB test network) may
+    front nodes with app_id / app_key headers, but that is deployment-specific and
+    not part of the core API.
+idempotency:
+  supported: true
+  style: content-addressed
+  key: transaction id (a SHA3-256 hash of the transaction body)
+  notes: >-
+    Transaction submission is naturally idempotent: a transaction's id is the hash
+    of its content, so re-POSTing an identical signed transaction is safe and
+    deduplicated by id rather than creating a duplicate. There is no Idempotency-Key
+    header — the content address is the idempotency key.
+pagination:
+  style: limit
+  params: [limit]
+  notes: >-
+    The full-text search endpoints (/assets, /metadata) accept an optional limit
+    parameter to cap result count. There is no cursor/offset pagination; other list
+    endpoints filter by exact keys (asset_id, public_key, transaction_id).
+write_modes:
+  param: mode
+  values: [async, sync, commit]
+  notes: >-
+    POST /transactions accepts a mode parameter controlling acknowledgement:
+    async returns once accepted, sync once validated, commit once written to a block.
+versioning:
+  style: uri-path
+  current: v1
+  notes: The API is versioned in the path (/api/v1/).
+error_envelope:
+  content_type: application/json
+  field: message
+  ref: errors/bigchaindb-problem-types.yml
+rate_limiting:
+  notes: No API-level rate-limit signaling is documented; throughput is a function of the deployed node/network capacity.
+cross_references:
+  errors: errors/bigchaindb-problem-types.yml
+  data_model: data-model/bigchaindb-data-model.yml
+  lifecycle: lifecycle/bigchaindb-lifecycle.yml

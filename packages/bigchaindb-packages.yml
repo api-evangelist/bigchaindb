@@ -1,0 +1,42 @@
+generated: '2026-07-18'
+method: searched
+source: >-
+  Confirmed against the BigchainDB GitHub organization (github.com/bigchaindb)
+  and the driver package manifests. Each driver README/manifest labels the
+  library as the official first-party driver. npm/PyPI front-ends return 403 to
+  automated clients, so names/versions were confirmed from the repository
+  package.json / setup.py.
+packages:
+  - language: python
+    registry: pypi
+    name: bigchaindb-driver
+    url: https://pypi.org/project/bigchaindb-driver/
+    source: https://github.com/bigchaindb/bigchaindb-driver
+    install: pip install bigchaindb-driver
+    official: true
+    note: Official Python driver for BigchainDB (setup.py name bigchaindb_driver).
+  - language: javascript
+    registry: npm
+    name: bigchaindb-driver
+    url: https://www.npmjs.com/package/bigchaindb-driver
+    source: https://github.com/bigchaindb/js-bigchaindb-driver
+    install: npm install bigchaindb-driver
+    official: true
+    version: 4.3.0
+    note: Official BigchainDB JavaScript driver for Node.js and the browser.
+  - language: java
+    registry: maven
+    name: com.bigchaindb:bigchaindb-driver
+    url: https://github.com/bigchaindb/java-bigchaindb-driver
+    source: https://github.com/bigchaindb/java-bigchaindb-driver
+    install: "implementation 'com.bigchaindb:bigchaindb-driver'"
+    official: true
+    note: Official Java and Android driver for BigchainDB (groupId com.bigchaindb, artifactId bigchaindb-driver).
+  - language: python
+    registry: pypi
+    name: cryptoconditions
+    url: https://pypi.org/project/cryptoconditions/
+    source: https://github.com/bigchaindb/cryptoconditions
+    install: pip install cryptoconditions
+    official: true
+    note: Supporting library — Python implementation of the Crypto-Conditions spec used to sign BigchainDB transactions.

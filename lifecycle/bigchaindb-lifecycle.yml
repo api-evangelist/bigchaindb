@@ -1,0 +1,29 @@
+generated: '2026-07-18'
+method: searched
+source: >-
+  BigchainDB Server documentation and the github.com/bigchaindb/bigchaindb
+  releases. BigchainDB versions its HTTP API in the URI path (/api/v1). The last
+  BigchainDB Server line is the 2.x series (Tendermint-based); the project's
+  successor work continued as Planetmint under the IPDB Foundation.
+versioning:
+  scheme: uri-path
+  current: v1
+  mechanism: version segment in the request path (/api/v1/)
+  docs: https://docs.bigchaindb.com/projects/server/en/latest/http-client-server-api.html
+deprecation:
+  policy_url: null
+  sunset_header: false
+  notes: >-
+    No formal RFC 8594 Sunset/Deprecation header policy is documented. The broader
+    project is in maintenance: BigchainDB Server 2.x is the final line and active
+    development moved to the Planetmint fork under the IPDB Foundation.
+sla:
+  url: null
+  public_uptime_target: null
+  notes: BigchainDB is self-hosted software; there is no vendor uptime SLA. Availability depends on the operator's deployment.
+status_page: null
+releases: https://github.com/bigchaindb/bigchaindb/releases
+successor:
+  name: Planetmint
+  org: IPDB Foundation
+  notes: The maintained continuation of the BigchainDB codebase.

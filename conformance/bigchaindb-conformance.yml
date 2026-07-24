@@ -1,0 +1,30 @@
+generated: '2026-07-18'
+method: derived
+source: >-
+  Derived from openapi/bigchaindb-http-openapi.yml, the BigchainDB data-model and
+  transaction documentation, and the supporting cryptoconditions / py-ipld
+  libraries in the BigchainDB GitHub organization. Asserts which cross-cutting
+  standards the API and its data model conform to; no third-party security
+  certification program (SOC 2 / ISO 27001 / etc.) is published for the
+  self-hosted software, so no Compliance pointer is emitted.
+standards:
+  - id: crypto-conditions
+    conforms: true
+    evidence: Transactions are signed and outputs conditioned using the Interledger Crypto-Conditions spec (github.com/bigchaindb/cryptoconditions).
+  - id: ed25519
+    conforms: true
+    evidence: Transaction signatures use Ed25519 keypairs.
+  - id: ipld
+    conforms: true
+    evidence: BigchainDB implements the InterPlanetary Linked Data model (github.com/bigchaindb/py-ipld).
+  - id: tendermint-bft
+    conforms: true
+    evidence: Consensus is provided by Tendermint (BFT) in the 2.x server line; blocks and a validator set are exposed via the API.
+  - id: oauth2
+    conforms: false
+    evidence: No oauth2 securityScheme; the HTTP API has no transport-layer auth.
+  - id: rfc9457-problem-details
+    conforms: false
+    evidence: Errors are returned as a plain JSON object with a message field, not application/problem+json.
+  - id: json-api
+    conforms: false

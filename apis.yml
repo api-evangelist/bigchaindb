@@ -1,8 +1,18 @@
 aid: bigchaindb
 name: Bigchaindb
-description: 'Bigchaindb is a company surfaced as a portfolio company of anthemis, earlybird and added
-  to the API Evangelist network as a stub for enrichment. Sector: crypto. This profile is a lead awaiting
-  the enrichment pipeline.'
+description: >-
+  BigchainDB is an open-source blockchain database that combines the developer
+  experience and query power of a database with blockchain properties:
+  decentralized (Byzantine fault-tolerant) control, immutable append-only data
+  storage, and built-in support for registering and transferring assets.
+  Developed by BigchainDB GmbH (Berlin) with the IPDB Foundation overseeing the
+  software and public networks, it exposes a simple versioned HTTP API on each
+  node (default port 9984) for creating and reading transactions, assets,
+  outputs, metadata, blocks and validators. Applications sign transactions with
+  Ed25519 crypto-conditions, so authorization is enforced at the payload level
+  rather than via transport authentication. Official Python, JavaScript and Java
+  drivers are published, and the maintained continuation of the codebase is the
+  Planetmint project.
 url: https://raw.githubusercontent.com/api-evangelist/bigchaindb/refs/heads/main/apis.yml
 x-type: company
 x-source: vc-portfolio
@@ -11,15 +21,260 @@ x-backed-by:
 - earlybird
 x-tier: stub
 x-tier-reason: portfolio-lead
+accessModel:
+  pricing: unknown
+  onboarding: unknown
+  trial: false
+  try_now: false
+  public: false
+  label: Unknown
+  confidence: low
+  source:
+  - authentication
+  generated: '2026-07-22'
+  method: derived
 specificationVersion: '0.20'
 created: '2026-07-17'
-modified: '2026-07-17'
+modified: '2026-07-18'
+image: https://github.com/bigchaindb.png
 tags:
 - Company
 - Crypto
-apis: []
+- Blockchain
+- Database
+- Decentralization
+- Distributed Ledger
+- Assets
+- Immutability
+apis:
+- aid: bigchaindb:bigchaindb-assets-api
+  name: Bigchaindb Assets API
+  description: Full-text search over asset payloads.
+  humanURL: https://docs.bigchaindb.com/projects/server/en/latest/http-client-server-api.html
+  baseURL: https://test.ipdb.io:9984
+  tags:
+  - Assets
+  properties:
+  - type: OpenAPI
+    url: openapi/bigchaindb-assets-api-openapi.yml
+  - type: Documentation
+    url: https://docs.bigchaindb.com/
+  - type: APIReference
+    url: https://docs.bigchaindb.com/projects/server/en/latest/http-client-server-api.html
+  - type: Authentication
+    url: authentication/bigchaindb-authentication.yml
+  - type: ErrorCatalog
+    url: errors/bigchaindb-problem-types.yml
+  - type: DataModel
+    url: data-model/bigchaindb-data-model.yml
+  - type: Conventions
+    url: conventions/bigchaindb-conventions.yml
+  - type: Idempotency
+    url: conventions/bigchaindb-conventions.yml
+  - type: Lifecycle
+    url: lifecycle/bigchaindb-lifecycle.yml
+  - type: Conformance
+    url: conformance/bigchaindb-conformance.yml
+- aid: bigchaindb:bigchaindb-blocks-api
+  name: Bigchaindb Blocks API
+  description: Read blocks by height or by contained transaction.
+  humanURL: https://docs.bigchaindb.com/projects/server/en/latest/http-client-server-api.html
+  baseURL: https://test.ipdb.io:9984
+  tags:
+  - Blocks
+  properties:
+  - type: OpenAPI
+    url: openapi/bigchaindb-blocks-api-openapi.yml
+  - type: Documentation
+    url: https://docs.bigchaindb.com/
+  - type: APIReference
+    url: https://docs.bigchaindb.com/projects/server/en/latest/http-client-server-api.html
+  - type: Authentication
+    url: authentication/bigchaindb-authentication.yml
+  - type: ErrorCatalog
+    url: errors/bigchaindb-problem-types.yml
+  - type: DataModel
+    url: data-model/bigchaindb-data-model.yml
+  - type: Conventions
+    url: conventions/bigchaindb-conventions.yml
+  - type: Idempotency
+    url: conventions/bigchaindb-conventions.yml
+  - type: Lifecycle
+    url: lifecycle/bigchaindb-lifecycle.yml
+  - type: Conformance
+    url: conformance/bigchaindb-conformance.yml
+- aid: bigchaindb:bigchaindb-metadata-api
+  name: Bigchaindb Metadata API
+  description: Full-text search over transaction metadata.
+  humanURL: https://docs.bigchaindb.com/projects/server/en/latest/http-client-server-api.html
+  baseURL: https://test.ipdb.io:9984
+  tags:
+  - Metadata
+  properties:
+  - type: OpenAPI
+    url: openapi/bigchaindb-metadata-api-openapi.yml
+  - type: Documentation
+    url: https://docs.bigchaindb.com/
+  - type: APIReference
+    url: https://docs.bigchaindb.com/projects/server/en/latest/http-client-server-api.html
+  - type: Authentication
+    url: authentication/bigchaindb-authentication.yml
+  - type: ErrorCatalog
+    url: errors/bigchaindb-problem-types.yml
+  - type: DataModel
+    url: data-model/bigchaindb-data-model.yml
+  - type: Conventions
+    url: conventions/bigchaindb-conventions.yml
+  - type: Idempotency
+    url: conventions/bigchaindb-conventions.yml
+  - type: Lifecycle
+    url: lifecycle/bigchaindb-lifecycle.yml
+  - type: Conformance
+    url: conformance/bigchaindb-conformance.yml
+- aid: bigchaindb:bigchaindb-outputs-api
+  name: Bigchaindb Outputs API
+  description: List transaction outputs by public key.
+  humanURL: https://docs.bigchaindb.com/projects/server/en/latest/http-client-server-api.html
+  baseURL: https://test.ipdb.io:9984
+  tags:
+  - Outputs
+  properties:
+  - type: OpenAPI
+    url: openapi/bigchaindb-outputs-api-openapi.yml
+  - type: Documentation
+    url: https://docs.bigchaindb.com/
+  - type: APIReference
+    url: https://docs.bigchaindb.com/projects/server/en/latest/http-client-server-api.html
+  - type: Authentication
+    url: authentication/bigchaindb-authentication.yml
+  - type: ErrorCatalog
+    url: errors/bigchaindb-problem-types.yml
+  - type: DataModel
+    url: data-model/bigchaindb-data-model.yml
+  - type: Conventions
+    url: conventions/bigchaindb-conventions.yml
+  - type: Idempotency
+    url: conventions/bigchaindb-conventions.yml
+  - type: Lifecycle
+    url: lifecycle/bigchaindb-lifecycle.yml
+  - type: Conformance
+    url: conformance/bigchaindb-conformance.yml
+- aid: bigchaindb:bigchaindb-root-api
+  name: Bigchaindb Root API
+  description: Node discovery endpoints.
+  humanURL: https://docs.bigchaindb.com/projects/server/en/latest/http-client-server-api.html
+  baseURL: https://test.ipdb.io:9984
+  tags:
+  - Root
+  properties:
+  - type: OpenAPI
+    url: openapi/bigchaindb-root-api-openapi.yml
+  - type: Documentation
+    url: https://docs.bigchaindb.com/
+  - type: APIReference
+    url: https://docs.bigchaindb.com/projects/server/en/latest/http-client-server-api.html
+  - type: Authentication
+    url: authentication/bigchaindb-authentication.yml
+  - type: ErrorCatalog
+    url: errors/bigchaindb-problem-types.yml
+  - type: DataModel
+    url: data-model/bigchaindb-data-model.yml
+  - type: Conventions
+    url: conventions/bigchaindb-conventions.yml
+  - type: Idempotency
+    url: conventions/bigchaindb-conventions.yml
+  - type: Lifecycle
+    url: lifecycle/bigchaindb-lifecycle.yml
+  - type: Conformance
+    url: conformance/bigchaindb-conformance.yml
+- aid: bigchaindb:bigchaindb-transactions-api
+  name: Bigchaindb Transactions API
+  description: Create and read transactions (CREATE and TRANSFER operations).
+  humanURL: https://docs.bigchaindb.com/projects/server/en/latest/http-client-server-api.html
+  baseURL: https://test.ipdb.io:9984
+  tags:
+  - Transactions
+  properties:
+  - type: OpenAPI
+    url: openapi/bigchaindb-transactions-api-openapi.yml
+  - type: Documentation
+    url: https://docs.bigchaindb.com/
+  - type: APIReference
+    url: https://docs.bigchaindb.com/projects/server/en/latest/http-client-server-api.html
+  - type: Authentication
+    url: authentication/bigchaindb-authentication.yml
+  - type: ErrorCatalog
+    url: errors/bigchaindb-problem-types.yml
+  - type: DataModel
+    url: data-model/bigchaindb-data-model.yml
+  - type: Conventions
+    url: conventions/bigchaindb-conventions.yml
+  - type: Idempotency
+    url: conventions/bigchaindb-conventions.yml
+  - type: Lifecycle
+    url: lifecycle/bigchaindb-lifecycle.yml
+  - type: Conformance
+    url: conformance/bigchaindb-conformance.yml
+- aid: bigchaindb:bigchaindb-validators-api
+  name: Bigchaindb Validators API
+  description: Read the node's validator set.
+  humanURL: https://docs.bigchaindb.com/projects/server/en/latest/http-client-server-api.html
+  baseURL: https://test.ipdb.io:9984
+  tags:
+  - Validators
+  properties:
+  - type: OpenAPI
+    url: openapi/bigchaindb-validators-api-openapi.yml
+  - type: Documentation
+    url: https://docs.bigchaindb.com/
+  - type: APIReference
+    url: https://docs.bigchaindb.com/projects/server/en/latest/http-client-server-api.html
+  - type: Authentication
+    url: authentication/bigchaindb-authentication.yml
+  - type: ErrorCatalog
+    url: errors/bigchaindb-problem-types.yml
+  - type: DataModel
+    url: data-model/bigchaindb-data-model.yml
+  - type: Conventions
+    url: conventions/bigchaindb-conventions.yml
+  - type: Idempotency
+    url: conventions/bigchaindb-conventions.yml
+  - type: Lifecycle
+    url: lifecycle/bigchaindb-lifecycle.yml
+  - type: Conformance
+    url: conformance/bigchaindb-conformance.yml
+common:
+- type: Packages
+  url: packages/bigchaindb-packages.yml
+- type: SDKs
+  url: packages/bigchaindb-packages.yml
+- type: LLMsTxt
+  url: llms/bigchaindb-llms.txt
+- type: DeveloperPortal
+  url: https://docs.bigchaindb.com/
+- type: Documentation
+  url: https://docs.bigchaindb.com/
+- type: GettingStarted
+  url: https://docs.bigchaindb.com/
+- type: Blog
+  url: https://blog.bigchaindb.com
+- type: GitHubOrganization
+  url: https://github.com/bigchaindb
+- type: TermsOfService
+  url: https://www.bigchaindb.com/terms/
+- type: PrivacyPolicy
+  url: https://www.bigchaindb.com/privacy/
+- type: SourceCode
+  url: https://github.com/bigchaindb/bigchaindb
+- type: Website
+  url: https://www.bigchaindb.com/
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
 - FN: APIs.json
   email: info@apis.io
+x-enrichment:
+  date: '2026-07-19'
+  status: backfilled
+  pass: local-v1
+  note: backfilled from .gitignore signal + verified work evidence

@@ -1,0 +1,26 @@
+{
+  "provider": "bigchaindb",
+  "sources": [
+    "bigchaindb-assets-api-openapi.yml",
+    "bigchaindb-blocks-api-openapi.yml",
+    "bigchaindb-metadata-api-openapi.yml",
+    "bigchaindb-outputs-api-openapi.yml",
+    "bigchaindb-root-api-openapi.yml",
+    "bigchaindb-transactions-api-openapi.yml",
+    "bigchaindb-validators-api-openapi.yml"
+  ],
+  "outputs": [
+    "bigchaindb-assets-api-openapi.yml",
+    "bigchaindb-blocks-api-openapi.yml",
+    "bigchaindb-metadata-api-openapi.yml",
+    "bigchaindb-outputs-api-openapi.yml",
+    "bigchaindb-root-api-openapi.yml",
+    "bigchaindb-transactions-api-openapi.yml",
+    "bigchaindb-validators-api-openapi.yml"
+  ],
+  "archived": [],
+  "errors": [],
+  "warnings": [],
+  "notes": [],
+  "skipped": []
+}

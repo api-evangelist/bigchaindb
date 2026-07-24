@@ -1,0 +1,29 @@
+generated: '2026-07-18'
+method: derived
+source: >-
+  Derived from the resource endpoints and object relationships documented in the
+  BigchainDB Server HTTP API reference and transcribed into
+  openapi/bigchaindb-http-openapi.yml. BigchainDB's data model is a UTXO-style
+  ledger of assets, transactions, outputs and blocks.
+docs: https://docs.bigchaindb.com/projects/server/en/latest/data-models/index.html
+notation: >-
+  relationships use has_one / has_many / belongs_to with the reference field name;
+  direction is from the entity that owns the reference.
+entities:
+  - {name: Asset, domain: ledger, description: A digital or physical asset registered on the chain by a CREATE transaction; identified by asset_id (the id of its CREATE transaction).}
+  - {name: Transaction, domain: ledger, description: A CREATE or TRANSFER operation over an asset; the fundamental unit written to the ledger.}
+  - {name: Input, domain: ledger, description: A reference (fulfillment) that spends a previous transaction output.}
+  - {name: Output, domain: ledger, description: A condition assigning an amount of an asset to one or more public keys; either spent or unspent.}
+  - {name: Metadata, domain: ledger, description: Arbitrary JSON attached to a transaction and full-text searchable.}
+  - {name: Block, domain: consensus, description: An ordered set of committed transactions produced by Tendermint consensus, addressed by height.}
+  - {name: Validator, domain: consensus, description: A consensus node with a public key and voting power in the validator set.}
+relationships:
+  - {from: Asset, to: Transaction, kind: has_many, via: asset_id}
+  - {from: Transaction, to: Asset, kind: belongs_to, via: asset.id}
+  - {from: Transaction, to: Input, kind: has_many, via: inputs}
+  - {from: Transaction, to: Output, kind: has_many, via: outputs}
+  - {from: Transaction, to: Metadata, kind: has_one, via: metadata}
+  - {from: Input, to: Output, kind: belongs_to, via: fulfills}
+  - {from: Output, to: Transaction, kind: belongs_to, via: transaction_id}
+  - {from: Block, to: Transaction, kind: has_many, via: transactions}
+  - {from: Block, to: Validator, kind: has_many, via: validators}
