@@ -244,6 +244,19 @@ apis:
   - type: Conformance
     url: conformance/bigchaindb-conformance.yml
 common:
+- type: MCPServer
+  url: mcp/bigchaindb-mcp.yml
+- type: IssueTracker
+  url: https://github.com/bigchaindb/bigchaindb/issues
+- type: Releases
+  url: https://github.com/bigchaindb/bigchaindb/releases
+- type: CodeOfConduct
+  url: https://github.com/bigchaindb/bigchaindb/blob/master/CODE_OF_CONDUCT.md
+- type: ContributionGuide
+  url: https://github.com/bigchaindb/bigchaindb/blob/master/.github/CONTRIBUTING.md
+- type: License
+  name: Apache-2.0
+  url: https://github.com/bigchaindb/bigchaindb/blob/master/LICENSE
 - type: Packages
   url: packages/bigchaindb-packages.yml
 - type: SDKs
