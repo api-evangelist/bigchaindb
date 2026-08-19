@@ -1,0 +1,56 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "BigchainDB HTTP Assets Blocks API",
+    "version": "v1"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Blocks",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get a block by height",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{host}:9984/api/v1/blocks/:block_height",
+            "params": [
+              {
+                "name": "block_height",
+                "value": "",
+                "type": "path",
+                "description": "The height of the block to retrieve."
+              }
+            ]
+          },
+          "docs": "Retrieve the block at the given height, including the list of transaction ids it contains."
+        },
+        {
+          "info": {
+            "name": "List blocks containing a transaction",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{host}:9984/api/v1/blocks",
+            "params": [
+              {
+                "name": "transaction_id",
+                "value": "",
+                "type": "query",
+                "description": "The transaction id to look up."
+              }
+            ]
+          },
+          "docs": "Get the heights of the blocks that contain the transaction with the given transaction_id."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

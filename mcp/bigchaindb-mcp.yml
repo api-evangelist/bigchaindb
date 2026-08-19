@@ -1,39 +1,43 @@
 generated: '2026-07-18'
 method: derived
 status: candidate
-source: >-
-  No official BigchainDB MCP server was found (the project predates MCP and the
-  GitHub org publishes none). This is a CANDIDATE tool list derived one-to-one from
-  the documented HTTP API operations in openapi/bigchaindb-http-openapi.yml, offered
-  as a starting point for an MCP wrapper over a BigchainDB node.
+source: No official BigchainDB MCP server was found (the project predates MCP and the GitHub org publishes
+  none). This is a CANDIDATE tool list derived one-to-one from the documented HTTP API operations in openapi/bigchaindb-http-openapi.yml,
+  offered as a starting point for an MCP wrapper over a BigchainDB node.
 server:
   name: bigchaindb
   transport: http
 tools:
-  - name: get_transaction
-    description: Retrieve a single committed transaction by its id.
-    source_operation: openapi/bigchaindb-http-openapi.yml#getTransaction
-  - name: list_transactions
-    description: List transactions that use a given asset_id, optionally filtered by operation.
-    source_operation: openapi/bigchaindb-http-openapi.yml#listTransactions
-  - name: create_transaction
-    description: Submit a signed CREATE or TRANSFER transaction to a node.
-    source_operation: openapi/bigchaindb-http-openapi.yml#createTransaction
-  - name: list_outputs
-    description: List transaction outputs for a public key, optionally filtered by spent status.
-    source_operation: openapi/bigchaindb-http-openapi.yml#listOutputs
-  - name: search_assets
-    description: Full-text search over asset payloads.
-    source_operation: openapi/bigchaindb-http-openapi.yml#searchAssets
-  - name: search_metadata
-    description: Full-text search over transaction metadata.
-    source_operation: openapi/bigchaindb-http-openapi.yml#searchMetadata
-  - name: get_validators
-    description: Return the node's validator set.
-    source_operation: openapi/bigchaindb-http-openapi.yml#getValidators
-  - name: get_block
-    description: Retrieve a block by its height.
-    source_operation: openapi/bigchaindb-http-openapi.yml#getBlock
-  - name: list_blocks
-    description: List the block heights that contain a given transaction id.
-    source_operation: openapi/bigchaindb-http-openapi.yml#listBlocks
+- name: get_transaction
+  description: Retrieve a single committed transaction by its id.
+  source_operation: openapi/bigchaindb-http-openapi.yml#getTransaction
+- name: list_transactions
+  description: List transactions that use a given asset_id, optionally filtered by operation.
+  source_operation: openapi/bigchaindb-http-openapi.yml#listTransactions
+- name: create_transaction
+  description: Submit a signed CREATE or TRANSFER transaction to a node.
+  source_operation: openapi/bigchaindb-http-openapi.yml#createTransaction
+- name: list_outputs
+  description: List transaction outputs for a public key, optionally filtered by spent status.
+  source_operation: openapi/bigchaindb-http-openapi.yml#listOutputs
+- name: search_assets
+  description: Full-text search over asset payloads.
+  source_operation: openapi/bigchaindb-http-openapi.yml#searchAssets
+- name: search_metadata
+  description: Full-text search over transaction metadata.
+  source_operation: openapi/bigchaindb-http-openapi.yml#searchMetadata
+- name: get_validators
+  description: Return the node's validator set.
+  source_operation: openapi/bigchaindb-http-openapi.yml#getValidators
+- name: get_block
+  description: Retrieve a block by its height.
+  source_operation: openapi/bigchaindb-http-openapi.yml#getBlock
+- name: list_blocks
+  description: List the block heights that contain a given transaction id.
+  source_operation: openapi/bigchaindb-http-openapi.yml#listBlocks
+deployment:
+  mode: none
+  verified: derived
+  tools: 9
+  checked: '2026-08-12'
+  source: catalog MCP census

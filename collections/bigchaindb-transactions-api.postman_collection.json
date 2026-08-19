@@ -1,0 +1,500 @@
+{
+  "item": [
+    {
+      "id": "00abcd8b-543a-4b87-a8ff-9f596be76f3b",
+      "name": "Transactions",
+      "description": {
+        "content": "Create and read transactions (CREATE and TRANSFER operations).",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "b7ad8bd5-d1b5-4de6-8d4e-ad3e00eaeab8",
+          "name": "Get a transaction by ID",
+          "request": {
+            "name": "Get a transaction by ID",
+            "description": {
+              "content": "Retrieve a single committed transaction by its transaction id.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "v1",
+                "transactions",
+                ":transaction_id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "transaction_id",
+                  "description": "(Required) The id of the transaction to retrieve."
+                },
+                {
+                  "description": "Hostname of a BigchainDB node (the IPDB test network historically ran at test.ipdb.io).",
+                  "type": "any",
+                  "value": "{{host}}",
+                  "key": "host"
+                }
+              ]
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "4a28f161-d540-47f6-a04b-a282a040c4b0",
+              "name": "The requested transaction.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "transactions",
+                    ":transaction_id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "transaction_id",
+                      "description": "(Required) The id of the transaction to retrieve."
+                    },
+                    {
+                      "description": "Hostname of a BigchainDB node (the IPDB test network historically ran at test.ipdb.io).",
+                      "type": "any",
+                      "value": "{{host}}",
+                      "key": "host"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "11302722-55a9-4470-a482-a2e0dc3f5d31",
+              "name": "A transaction with that id was not found (or is not yet committed).",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "transactions",
+                    ":transaction_id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "transaction_id",
+                      "description": "(Required) The id of the transaction to retrieve."
+                    },
+                    {
+                      "description": "Hostname of a BigchainDB node (the IPDB test network historically ran at test.ipdb.io).",
+                      "type": "any",
+                      "value": "{{host}}",
+                      "key": "host"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "3cf8ebda-a410-46c8-be45-4c0633ce506a",
+          "name": "List transactions for an asset",
+          "request": {
+            "name": "List transactions for an asset",
+            "description": {
+              "content": "Get a list of transactions that use an asset with the given asset_id. The operation type (CREATE or TRANSFER) may be filtered, and last_tx returns only the latest transaction.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "v1",
+                "transactions"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "asset_id",
+                  "value": "<string>",
+                  "description": "(Required) The asset id to filter transactions by."
+                },
+                {
+                  "disabled": false,
+                  "key": "operation",
+                  "value": "<string>",
+                  "description": "Filter by transaction operation."
+                },
+                {
+                  "disabled": false,
+                  "key": "last_tx",
+                  "value": "<boolean>",
+                  "description": "When true, return only the last transaction."
+                }
+              ],
+              "variable": [
+                {
+                  "description": "Hostname of a BigchainDB node (the IPDB test network historically ran at test.ipdb.io).",
+                  "type": "any",
+                  "value": "{{host}}",
+                  "key": "host"
+                }
+              ]
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "1d7b62f2-8cfd-433c-a147-7455cf7ae7d9",
+              "name": "A list of matching transactions.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "transactions"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "asset_id",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "operation",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "last_tx",
+                      "value": "<boolean>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "description": "Hostname of a BigchainDB node (the IPDB test network historically ran at test.ipdb.io).",
+                      "type": "any",
+                      "value": "{{host}}",
+                      "key": "host"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "9967aa4c-2f6c-4b12-964f-94c3e4f17270",
+              "name": "The request was malformed or a required parameter was missing.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "transactions"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "asset_id",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "operation",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "last_tx",
+                      "value": "<boolean>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "description": "Hostname of a BigchainDB node (the IPDB test network historically ran at test.ipdb.io).",
+                      "type": "any",
+                      "value": "{{host}}",
+                      "key": "host"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "4d3f39fe-3487-4d36-a9cd-d2db86615a86",
+          "name": "Submit a transaction",
+          "request": {
+            "name": "Submit a transaction",
+            "description": {
+              "content": "Push a new transaction to the node. The signed transaction is validated and, depending on mode, returned when accepted (async), when validated (sync), or when committed to a block (commit).",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "v1",
+                "transactions"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "mode",
+                  "value": "async",
+                  "description": "Persistence/acknowledgement mode for the submitted transaction."
+                }
+              ],
+              "variable": [
+                {
+                  "description": "Hostname of a BigchainDB node (the IPDB test network historically ran at test.ipdb.io).",
+                  "type": "any",
+                  "value": "{{host}}",
+                  "key": "host"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "<object>",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "b37023ab-6d18-4acc-b413-188ea5a6c2c0",
+              "name": "The transaction was accepted for processing.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "transactions"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "mode",
+                      "value": "async"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "description": "Hostname of a BigchainDB node (the IPDB test network historically ran at test.ipdb.io).",
+                      "type": "any",
+                      "value": "{{host}}",
+                      "key": "host"
+                    }
+                  ]
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "<object>",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Accepted",
+              "code": 202,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "3d608c37-b17c-41b8-aaf1-47cb7d91e5ec",
+              "name": "The transaction was invalid (bad signature, schema, or amount).",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "transactions"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "mode",
+                      "value": "async"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "description": "Hostname of a BigchainDB node (the IPDB test network historically ran at test.ipdb.io).",
+                      "type": "any",
+                      "value": "{{host}}",
+                      "key": "host"
+                    }
+                  ]
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "<object>",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "description": {
+        "content": "Hostname of a BigchainDB node (the IPDB test network historically ran at test.ipdb.io).",
+        "type": "text/plain"
+      },
+      "type": "any",
+      "value": "test.ipdb.io",
+      "key": "host"
+    },
+    {
+      "type": "string",
+      "value": "https://{{host}}:9984",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "895ada5e-8b04-425f-b4bc-ba0837b50753",
+    "name": "BigchainDB HTTP Assets Transactions API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "The BigchainDB HTTP Client-Server API. BigchainDB is an open-source blockchain database that combines high throughput, low latency, immutable data storage and built-in asset support with decentralized control. This document is a faithful transcription of the operations, parameters and status codes published in the official BigchainDB Server HTTP API reference; BigchainDB does not publish its own machine-readable OpenAPI, so this spec was generated by the API Evangelist enrichment pipeline from the documented endpoint reference.\n\nContact Support:\n Name: BigchainDB GmbH",
+      "type": "text/plain"
+    }
+  }
+}

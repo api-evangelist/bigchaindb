@@ -1,0 +1,91 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "BigchainDB HTTP Assets Transactions API",
+    "version": "v1"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Transactions",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get a transaction by ID",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{host}:9984/api/v1/transactions/:transaction_id",
+            "params": [
+              {
+                "name": "transaction_id",
+                "value": "",
+                "type": "path",
+                "description": "The id of the transaction to retrieve."
+              }
+            ]
+          },
+          "docs": "Retrieve a single committed transaction by its transaction id."
+        },
+        {
+          "info": {
+            "name": "List transactions for an asset",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{host}:9984/api/v1/transactions",
+            "params": [
+              {
+                "name": "asset_id",
+                "value": "",
+                "type": "query",
+                "description": "The asset id to filter transactions by."
+              },
+              {
+                "name": "operation",
+                "value": "",
+                "type": "query",
+                "description": "Filter by transaction operation."
+              },
+              {
+                "name": "last_tx",
+                "value": "",
+                "type": "query",
+                "description": "When true, return only the last transaction."
+              }
+            ]
+          },
+          "docs": "Get a list of transactions that use an asset with the given asset_id. The operation type (CREATE or TRANSFER) may be filtered, and last_tx returns only the latest transaction."
+        },
+        {
+          "info": {
+            "name": "Submit a transaction",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://{host}:9984/api/v1/transactions",
+            "params": [
+              {
+                "name": "mode",
+                "value": "",
+                "type": "query",
+                "description": "Persistence/acknowledgement mode for the submitted transaction."
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Push a new transaction to the node. The signed transaction is validated and, depending on mode, returned when accepted (async), when validated (sync), or when committed to a block (commit)."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

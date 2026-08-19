@@ -1,0 +1,189 @@
+{
+  "item": [
+    {
+      "id": "7cfa41fc-2d2f-4d7c-a298-7a36becfea69",
+      "name": "Root",
+      "description": {
+        "content": "Node discovery endpoints.",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "4843fbf6-4e88-41b8-85d8-6b443f37e5b7",
+          "name": "Discover node version and API endpoints",
+          "request": {
+            "name": "Discover node version and API endpoints",
+            "description": {
+              "content": "Returns the BigchainDB node software version and the set of available API endpoint URLs.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                ""
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "description": "Hostname of a BigchainDB node (the IPDB test network historically ran at test.ipdb.io).",
+                  "type": "any",
+                  "value": "{{host}}",
+                  "key": "host"
+                }
+              ]
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "e328840c-4b4b-419f-8504-84552ff26288",
+              "name": "Node information and endpoint map.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "Hostname of a BigchainDB node (the IPDB test network historically ran at test.ipdb.io).",
+                      "type": "any",
+                      "value": "{{host}}",
+                      "key": "host"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "a222901b-7806-434c-85be-314a2889fa34",
+          "name": "List available API v1 resources",
+          "request": {
+            "name": "List available API v1 resources",
+            "description": {
+              "content": "Returns the list of available resource endpoints under the v1 API.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "v1",
+                ""
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "description": "Hostname of a BigchainDB node (the IPDB test network historically ran at test.ipdb.io).",
+                  "type": "any",
+                  "value": "{{host}}",
+                  "key": "host"
+                }
+              ]
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "52fb7313-99b2-446a-ad5e-f8914b5bd5a4",
+              "name": "Map of available v1 resource URLs.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "Hostname of a BigchainDB node (the IPDB test network historically ran at test.ipdb.io).",
+                      "type": "any",
+                      "value": "{{host}}",
+                      "key": "host"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "description": {
+        "content": "Hostname of a BigchainDB node (the IPDB test network historically ran at test.ipdb.io).",
+        "type": "text/plain"
+      },
+      "type": "any",
+      "value": "test.ipdb.io",
+      "key": "host"
+    },
+    {
+      "type": "string",
+      "value": "https://{{host}}:9984",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "ea142d8c-aa59-4477-9454-e6f1ceed4222",
+    "name": "BigchainDB HTTP Assets Root API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "The BigchainDB HTTP Client-Server API. BigchainDB is an open-source blockchain database that combines high throughput, low latency, immutable data storage and built-in asset support with decentralized control. This document is a faithful transcription of the operations, parameters and status codes published in the official BigchainDB Server HTTP API reference; BigchainDB does not publish its own machine-readable OpenAPI, so this spec was generated by the API Evangelist enrichment pipeline from the documented endpoint reference.\n\nContact Support:\n Name: BigchainDB GmbH",
+      "type": "text/plain"
+    }
+  }
+}

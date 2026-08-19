@@ -1,0 +1,310 @@
+{
+  "item": [
+    {
+      "id": "bd85c117-cf4f-43cb-a8ef-f6c55ed40499",
+      "name": "Blocks",
+      "description": {
+        "content": "Read blocks by height or by contained transaction.",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "4c36bd49-b902-493d-9437-dbc1883a057b",
+          "name": "Get a block by height",
+          "request": {
+            "name": "Get a block by height",
+            "description": {
+              "content": "Retrieve the block at the given height, including the list of transaction ids it contains.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "v1",
+                "blocks",
+                ":block_height"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "block_height",
+                  "description": "(Required) The height of the block to retrieve."
+                },
+                {
+                  "description": "Hostname of a BigchainDB node (the IPDB test network historically ran at test.ipdb.io).",
+                  "type": "any",
+                  "value": "{{host}}",
+                  "key": "host"
+                }
+              ]
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "e86dbb9e-4434-4280-a85e-cd5ee22b944c",
+              "name": "The requested block.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "blocks",
+                    ":block_height"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "block_height",
+                      "description": "(Required) The height of the block to retrieve."
+                    },
+                    {
+                      "description": "Hostname of a BigchainDB node (the IPDB test network historically ran at test.ipdb.io).",
+                      "type": "any",
+                      "value": "{{host}}",
+                      "key": "host"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "b1240035-e770-4703-b29d-78f31a83faf9",
+              "name": "No block exists at that height.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "blocks",
+                    ":block_height"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "block_height",
+                      "description": "(Required) The height of the block to retrieve."
+                    },
+                    {
+                      "description": "Hostname of a BigchainDB node (the IPDB test network historically ran at test.ipdb.io).",
+                      "type": "any",
+                      "value": "{{host}}",
+                      "key": "host"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "4e2a0b41-b618-4bd3-b504-ab639d9bab3a",
+          "name": "List blocks containing a transaction",
+          "request": {
+            "name": "List blocks containing a transaction",
+            "description": {
+              "content": "Get the heights of the blocks that contain the transaction with the given transaction_id.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "v1",
+                "blocks"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "transaction_id",
+                  "value": "<string>",
+                  "description": "(Required) The transaction id to look up."
+                }
+              ],
+              "variable": [
+                {
+                  "description": "Hostname of a BigchainDB node (the IPDB test network historically ran at test.ipdb.io).",
+                  "type": "any",
+                  "value": "{{host}}",
+                  "key": "host"
+                }
+              ]
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "6bcfc6a6-cb25-44b6-bb74-e7dc2d442a98",
+              "name": "A list of block heights containing the transaction.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "blocks"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "transaction_id",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "description": "Hostname of a BigchainDB node (the IPDB test network historically ran at test.ipdb.io).",
+                      "type": "any",
+                      "value": "{{host}}",
+                      "key": "host"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "9ecb4d24-8c8b-491e-aa6e-0c10528df616",
+              "name": "The transaction_id parameter was missing.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "blocks"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "transaction_id",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "description": "Hostname of a BigchainDB node (the IPDB test network historically ran at test.ipdb.io).",
+                      "type": "any",
+                      "value": "{{host}}",
+                      "key": "host"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "description": {
+        "content": "Hostname of a BigchainDB node (the IPDB test network historically ran at test.ipdb.io).",
+        "type": "text/plain"
+      },
+      "type": "any",
+      "value": "test.ipdb.io",
+      "key": "host"
+    },
+    {
+      "type": "string",
+      "value": "https://{{host}}:9984",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "ef5b1fc5-1db8-4fb7-9ca9-328fbaebc5fd",
+    "name": "BigchainDB HTTP Assets Blocks API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "The BigchainDB HTTP Client-Server API. BigchainDB is an open-source blockchain database that combines high throughput, low latency, immutable data storage and built-in asset support with decentralized control. This document is a faithful transcription of the operations, parameters and status codes published in the official BigchainDB Server HTTP API reference; BigchainDB does not publish its own machine-readable OpenAPI, so this spec was generated by the API Evangelist enrichment pipeline from the documented endpoint reference.\n\nContact Support:\n Name: BigchainDB GmbH",
+      "type": "text/plain"
+    }
+  }
+}

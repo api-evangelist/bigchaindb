@@ -1,0 +1,40 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "BigchainDB HTTP Assets Root API",
+    "version": "v1"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Root",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Discover node version and API endpoints",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{host}:9984/"
+          },
+          "docs": "Returns the BigchainDB node software version and the set of available API endpoint URLs."
+        },
+        {
+          "info": {
+            "name": "List available API v1 resources",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{host}:9984/api/v1/"
+          },
+          "docs": "Returns the list of available resource endpoints under the v1 API."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

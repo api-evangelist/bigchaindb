@@ -1,0 +1,186 @@
+{
+  "item": [
+    {
+      "id": "0f3b19c4-c899-469e-9167-3e3e7382e9d7",
+      "name": "Assets",
+      "description": {
+        "content": "Full-text search over asset payloads.",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "2719e55c-5489-4d93-925c-d210b33ca26d",
+          "name": "Search assets",
+          "request": {
+            "name": "Search assets",
+            "description": {
+              "content": "Full-text search over the data payloads of CREATE-transaction assets.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "v1",
+                "assets"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "search",
+                  "value": "<string>",
+                  "description": "(Required) The text to search for in asset payloads."
+                },
+                {
+                  "disabled": false,
+                  "key": "limit",
+                  "value": "<integer>",
+                  "description": "Maximum number of results to return."
+                }
+              ],
+              "variable": [
+                {
+                  "description": "Hostname of a BigchainDB node (the IPDB test network historically ran at test.ipdb.io).",
+                  "type": "any",
+                  "value": "{{host}}",
+                  "key": "host"
+                }
+              ]
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "27d4bf3b-ce87-470c-a6b6-93a8c33136c8",
+              "name": "A list of matching assets.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "assets"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "search",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "limit",
+                      "value": "<integer>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "description": "Hostname of a BigchainDB node (the IPDB test network historically ran at test.ipdb.io).",
+                      "type": "any",
+                      "value": "{{host}}",
+                      "key": "host"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "551f29aa-6ffe-4d8d-8212-6c603a13ac50",
+              "name": "The search parameter was missing.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "assets"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "search",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "limit",
+                      "value": "<integer>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "description": "Hostname of a BigchainDB node (the IPDB test network historically ran at test.ipdb.io).",
+                      "type": "any",
+                      "value": "{{host}}",
+                      "key": "host"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "description": {
+        "content": "Hostname of a BigchainDB node (the IPDB test network historically ran at test.ipdb.io).",
+        "type": "text/plain"
+      },
+      "type": "any",
+      "value": "test.ipdb.io",
+      "key": "host"
+    },
+    {
+      "type": "string",
+      "value": "https://{{host}}:9984",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "fe00db8d-4c6e-4ecb-a54f-07ad8f94bff8",
+    "name": "BigchainDB HTTP Assets API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "The BigchainDB HTTP Client-Server API. BigchainDB is an open-source blockchain database that combines high throughput, low latency, immutable data storage and built-in asset support with decentralized control. This document is a faithful transcription of the operations, parameters and status codes published in the official BigchainDB Server HTTP API reference; BigchainDB does not publish its own machine-readable OpenAPI, so this spec was generated by the API Evangelist enrichment pipeline from the documented endpoint reference.\n\nContact Support:\n Name: BigchainDB GmbH",
+      "type": "text/plain"
+    }
+  }
+}

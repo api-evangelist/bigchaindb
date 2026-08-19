@@ -1,0 +1,29 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "BigchainDB HTTP Assets Validators API",
+    "version": "v1"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Validators",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get the validator set",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{host}:9984/api/v1/validators"
+          },
+          "docs": "Return the local validator set of the node, with each validator's public key and voting power."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}
