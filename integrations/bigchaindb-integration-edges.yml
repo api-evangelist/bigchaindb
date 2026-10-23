@@ -92,6 +92,35 @@ edges:
     detected: '2026-10-19'
   detected_by: sweep-cloud-native.py
   first_seen: '2026-10-15'
+- partner_name: LF Decentralized Trust (membership / landscape)
+  partner: lf-decentralized-trust
+  partner_match: register
+  type: register
+  direction: partner-built
+  category: LF Decentralized Trust landscape listing
+  evidence: https://landscape.lfdecentralizedtrust.org
+  channel: standard-directory
+  relationship: standard-participant
+  contract_reference:
+    register: LF Decentralized Trust Landscape (landscape.lfdecentralizedtrust.org/data/full.json)
+    spec_file: null
+    standard: LF Decentralized Trust
+    role: landscape-listed
+    registered_name: BigchainDB
+    registered_names:
+    - BigchainDB
+    website: https://www.bigchaindb.com
+    matched_domain: bigchaindb.com
+    matched_by: domain
+    landscape_categories:
+    - Technology Intersections / Blockchain databases
+    landscape_entries: 1
+    signal_note: 'participation only: LFDT membership / a landscape listing is standard-participant evidence, not
+      depth. Tier, entries and categories are CONTEXT, never counted'
+    detected_by: sweep-lf-decentralized-trust-landscape.py
+    detected: '2026-10-22'
+  detected_by: sweep-lf-decentralized-trust-landscape.py
+  first_seen: '2026-10-22'
 generated: '2026-10-15'
 method: searched
 source:
@@ -108,3 +137,8 @@ checked:
 - https://registry.npmjs.org
 - https://repo1.maven.org/maven2
 - https://rubygems.org/api/v1
+- https://github.com/LF-Decentralized-Trust-labs
+- https://github.com/canton-network/splice
+- https://github.com/hyperledger
+- https://landscape.lfdecentralizedtrust.org
+- https://landscape.lfdecentralizedtrust.org/data/full.json
